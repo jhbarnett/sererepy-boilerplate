@@ -1,20 +1,19 @@
 {
-  "name": "drf_react",
-  "version": "0.0.2",
-  "description": "Django and React",
-  "main": "index.js",
+  "name": "AnimalGame",
+  "version": "0.1.0",
+  "description": "",
+  "main": "assets/js/index.js",
   "scripts": {
     "start": "webpack && python manage.py runserver",
-    "dev": "webpack-dev-server --content-base assets/public/webpack/ --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --content-base assets/public/webpack/ --hot"
   },
   "keywords": [
     "django",
     "react",
     "webpack"
   ],
-  "author": "Jonathan Cox",
-  "license": "ISC",
+  "author": "Jason Barnett",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
