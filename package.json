@@ -4,6 +4,8 @@
   "description": "Django and React",
   "main": "index.js",
   "scripts": {
+    "start": "webpack && python manage.py runserver",
+    "dev": "webpack-dev-server --content-base assets/public/webpack/ --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,8 +27,9 @@
     "react-dom": "^0.14.7",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.12",
-    "webpack-bundle-tracker": "0.0.93"
+    "webpack": "^2.0.0",
+    "webpack-bundle-tracker": "0.0.93",
+    "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",

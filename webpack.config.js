@@ -12,9 +12,9 @@ module.exports = {
     
     output: {
         //where you want your compiled bundle to be stored
-        path: path.resolve('./assets/bundles/'), 
+        path: path.resolve('./assets/public/webpack/'), 
         //naming convention webpack should use for your files
-        filename: '[name]-[hash].js', 
+        filename: 'main.js', 
     },
     
     plugins: [
@@ -87,5 +87,13 @@ module.exports = {
         modules: ['node_modules'],
         //extensions that should be used to resolve modules
         extensions: ['.js', '.jsx']
-    }   
+    },
+
+    devServer: {
+        proxy: {
+            '/api/*': {
+            target: 'http://localhost:8000'
+            }
+        }
+    }
 };

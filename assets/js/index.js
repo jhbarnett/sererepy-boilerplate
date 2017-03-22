@@ -24,14 +24,14 @@ var BooksList = React.createClass({
     }, 
     render: function() {
         if (this.state.data) {
-            console.log('DATA!')
+            console.log('Data baby!')
             var bookNodes = this.state.data.map(function(book){
                 return <li> {book.title} </li>
             })
         }
         return (
             <div>
-                <h1>Hello React!</h1>
+                <h1>Hello, World!</h1>
                 <ul>
                     {bookNodes}
                 </ul>

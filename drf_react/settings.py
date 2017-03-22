@@ -39,7 +39,7 @@ ROOT_URLCONF = 'drf_react.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['assets/public'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -95,7 +95,7 @@ STATICFILES_DIRS = (
 
 WEBPACK_LOADER = {
 	'DEFAULT': {
-	'BUNDLE_DIR_NAME': 'bundles/',
-	'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    	'BUNDLE_DIR_NAME': 'public/webpack/',
+    	'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
 	}
 }
