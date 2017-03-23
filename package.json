@@ -26,8 +26,8 @@
     "jquery": "^2.2.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.2",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.0",
@@ -36,6 +36,10 @@
     "semantic-ui-less": "^2.2.9"
   },
   "dependencies": {
-    
+    "history": "^4.6.1",
+    "react-redux": "^5.0.3",
+    "react-router-dom": "^4.0.0",
+    "react-router-redux": "^5.0.0-alpha.4",
+    "redux": "^3.6.0"
   }
 }

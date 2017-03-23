@@ -1,46 +1,34 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
-require('../public/semantic/semantic.js')
-require('../public/semantic/semantic.less')
+import React from 'react';
+import { render } from 'react-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { Route } from 'react-router-dom'
+import createHistory from 'history/createBrowserHistory'
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import '../public/semantic/semantic.js';
+import '../public/semantic/semantic.less';
+import App from './App/App.jsx';
+import { counter } from './reducers';
 
-var BooksList = React.createClass({
-    loadBooksFromServer: function(){
-        $.ajax({
-            url: this.props.url,
-            datatype: 'json',
-            cache: false,
-            success: function(data) {
-                this.setState({data: data});
-            }.bind(this)
-        })
-    },
+// Create a browser history
+const history = createHistory()
 
-    getInitialState: function() {
-        return {data: []};
-    },
+//middleware for intercepting and dispatching navigation actions
+const middleware = routerMiddleware(history)
 
-    componentDidMount: function() {
-        this.loadBooksFromServer();
-        setInterval(this.loadBooksFromServer, 
-                    this.props.pollInterval)
-    }, 
-    render: function() {
-        if (this.state.data) {
-            console.log('Data baby!')
-            var bookNodes = this.state.data.map(function(book){
-                return <li> {book.title} </li>
-            })
-        }
-        return (
-            <div>
-                <h1>Hello, World!</h1>
-                <ul>
-                    {bookNodes}
-                </ul>
-            </div>
-        )
-    }
-})
+const store = createStore(
+  combineReducers({
+    counter,
+    router: routerReducer
+  }),
+  applyMiddleware(middleware)
+)
 
-ReactDOM.render(<BooksList url='/api/' pollInterval={1000} />, 
-    document.getElementById('container'))
+render( 
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
+      <div>
+        <Route path="/" component={App}/>
+      </div>
+    </ConnectedRouter>
+  </Provider> , document.getElementById('container'))
