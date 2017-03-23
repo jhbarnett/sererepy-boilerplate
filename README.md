@@ -1,5 +1,4 @@
-Sererrepy Boilerplate
-=============================
+#Sererrepy Boilerplate
 
 ##Technology
 Semantic-UI-LESS
