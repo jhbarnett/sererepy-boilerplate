@@ -1,6 +1,13 @@
-The Animal Game
+Sererrepy Boilerplate
 =============================
-Built with Django & React -- boilerplate provided by [geezhawk.github.io](http://geezhawk.github.io/using-react-with-django-rest-framework).
+
+##Technology
+Semantic-UI-LESS
+React
+Redux
+Redux-Saga
+Django
+Webpack
 
 ##Getting Started
 
@@ -18,17 +25,10 @@ Then, if you wish to work with hot module reloading enabled, run:
 * `npm run dev`
 * 'open http://localhost:8080'
 
-##Description
-
-A spin on the game, 21 questions. 
-Currently under construction.
 
 
-###Stack
-Webpack
-React
-Django
 
+*Shout out to [geezhawk.github.io](http://geezhawk.github.io/using-react-with-django-rest-framework).
 
 
 
