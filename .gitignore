@@ -1,7 +1,12 @@
 *.pyc
 node_modules/
 db.sqlite3
-assets/bundles
+assets/public/webpack/main
+assets/public/webpack/*.eot
+assets/public/webpack/*.svg
+assets/public/webpack/*.woff2
+assets/public/webpack/*.ttf
+assets/public/webpack/*.woff
 *.save
 .DS_Store
 npm-debug.log

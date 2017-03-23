@@ -8,17 +8,21 @@ class App extends React.Component {
     super(props)
   }
 
-  componentDidMount() {
-    setInterval(this.props.increment, 2000);
-  }
+  componentDidMount() {}
 
   render() {
     return (
-        <h1> {this.props.count} </h1>
+      <div>
+        <button onClick={this.props.incrementAsync}>Increment after 1 second</button>
+        <button onClick={this.props.increment}>Increment immediately</button>
+        <button onClick={this.props.decrementAsync}>Decrement after 1 second</button>
+        <button onClick={this.props.decrement}>Decrement immediately</button>
+        <hr />
+        <div>Clicked: {this.props.count} times</div>
+      </div>
     )
   }
 }
-
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -28,8 +32,11 @@ const mapStateToProps = (state, ownProps) => {
 
 const matchDispatchToProps = (dispatch, ownProps) => {
   return bindActionCreators({
-    increment: Actions.increment
+    increment: Actions.increment,
+    incrementAsync: Actions.incrementAsync,
+    decrement: Actions.decrement,
+    decrementAsync: Actions.decrementAsync
   }, dispatch)
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(App)
+export default connect(mapStateToProps, matchDispatchToProps)(App);
