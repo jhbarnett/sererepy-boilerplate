@@ -44,12 +44,16 @@ module.exports = {
                     presets: ['react'] 
                 }
             },
-            // the next regex tells webpack to use style-loader and css-loader
-            // (notice the chaining through the '!' syntax)
-            // on all css files
             {
                 test: /\.css$/,
                 use: 'style-loader!css-loader'
+            },
+            { 
+                test: /\.less$/, use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
+                ]
             },
             {
                 test: /\.png$/,
@@ -60,28 +64,23 @@ module.exports = {
                 use: 'file-loader'
             },
             {
-                test: /\.png$/,
-                use: 'url-loader?limit=100000'
-            },
-            {
                 test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=application/font-woff'
+                loader: 'url-loader?limit=10000&mimetype=application/font-woff'
             },
             {
-                test: /\.tff(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=application/octet-stream'
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
             },
             {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'file'
+                loader: 'file-loader'
             },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url?limit=10000&mimetype=image/svg+xml'
-            },
+                loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            }
         ]
     },
-    
     resolve: {
         //tells webpack where to look for modules
         modules: ['node_modules'],

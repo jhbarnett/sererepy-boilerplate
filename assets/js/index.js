@@ -1,5 +1,7 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
+require('../public/semantic/semantic.js')
+require('../public/semantic/semantic.less')
 
 var BooksList = React.createClass({
     loadBooksFromServer: function(){

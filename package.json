@@ -5,12 +5,14 @@
   "main": "assets/js/index.js",
   "scripts": {
     "start": "webpack && python manage.py runserver",
-    "dev": "webpack-dev-server --content-base assets/public/webpack/ --hot"
+    "dev": "webpack-dev-server --content-base assets/public/webpack/ --hot",
+    "postinstall": "node semantic-fix.js"
   },
   "keywords": [
     "django",
     "react",
-    "webpack"
+    "webpack",
+    "semantic-ui-less"
   ],
   "author": "Jason Barnett",
   "license": "MIT",
@@ -22,16 +24,18 @@
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
     "jquery": "^2.2.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.2",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^2.0.0",
+    "webpack": "^2.2.0",
     "webpack-bundle-tracker": "0.0.93",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "semantic-ui-less": "^2.2.9"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "react-bootstrap": "^0.30.7"
+    
   }
 }
